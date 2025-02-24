@@ -3,7 +3,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 const assert = require('assert');
 const fs = require('fs');
 
-describe('1+-2', function () {
+describe('-1+-1', function () {
     this.timeout(30000);
     let driver;
     let vars;
@@ -32,8 +32,8 @@ describe('1+-2', function () {
         }
     });
 
-    it('1+-2', async function () {
-        await driver.get("http://localhost:8000/");
+    it('-1+-1', async function () {
+        await driver.get("http://127.0.0.1:8000/index.html")
         await driver.manage().window().setRect({ width: 720, height: 900 });
 
         await driver.findElement(By.id("num1")).click();
@@ -44,7 +44,7 @@ describe('1+-2', function () {
 
         await driver.findElement(By.css("button:nth-child(1)")).click();
 
-        const filename = 'test4';
+        const filename = 'test1';
         const encodedString = await driver.takeScreenshot();
         await fs.writeFileSync(`./screenshots/${filename}.png`, encodedString, 'base64');
     });
