@@ -42,7 +42,7 @@ describe('-1 - (-2) Test', function () {
         await driver.findElement(By.id("num2")).click();
         await driver.findElement(By.id("num2")).sendKeys("0");
 
-        await driver.findElement(By.xpath("//button[text()='-']")).click();
+        await driver.findElement(By.xpath("//button[text()='Substraction']")).click();
 
         const filename = 'test14';
         const encodedString = await driver.takeScreenshot();
