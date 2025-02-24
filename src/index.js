@@ -5,9 +5,9 @@ function calculate(operator) {
     const resultDisp = document.getElementById("result");
 
     let result;
-    if (operator == "addition"){
+    if (operator == "+"){
         result = Number(num1) + Number(num2);
-    }else if (operator == "substraction"){
+    }else if (operator == "-"){
         result = Number(num1) - Number(num2);
     }
 
