@@ -44,7 +44,7 @@ describe('-1 - (-2) Test', function () {
 
         await driver.findElement(By.xpath("//button[text()='-']")).click();
 
-        const filename = 'test1';
+        const filename = 'test7';
         const encodedString = await driver.takeScreenshot();
         await fs.writeFileSync(`./screenshots/${filename}.png`, encodedString, 'base64');
     });
