@@ -75,9 +75,9 @@
       "target": "css=button:nth-child(1)",
       "targets": [
         ["css=button:nth-child(1)", "css:finder"],
-        ["xpath=//button[@onclick='sum()']", "xpath:attributes"],
+        ["xpath=//button[@onclick='calculate()']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'sum')]", "xpath:innerText"]
+        ["xpath=//button[contains(.,'calculate')]", "xpath:innerText"]
       ],
       "value": ""
     }]
@@ -153,9 +153,9 @@
       "target": "css=button:nth-child(1)",
       "targets": [
         ["css=button:nth-child(1)", "css:finder"],
-        ["xpath=//button[@onclick='sum()']", "xpath:attributes"],
+        ["xpath=//button[@onclick='calculate()']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'sum')]", "xpath:innerText"]
+        ["xpath=//button[contains(.,'calculate')]", "xpath:innerText"]
       ],
       "value": ""
     }]
@@ -219,9 +219,9 @@
       "target": "css=button:nth-child(1)",
       "targets": [
         ["css=button:nth-child(1)", "css:finder"],
-        ["xpath=//button[@onclick='sum()']", "xpath:attributes"],
+        ["xpath=//button[@onclick='calculate()']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'sum')]", "xpath:innerText"]
+        ["xpath=//button[contains(.,'calculate')]", "xpath:innerText"]
       ],
       "value": ""
     }]
@@ -297,9 +297,9 @@
       "target": "css=button:nth-child(1)",
       "targets": [
         ["css=button:nth-child(1)", "css:finder"],
-        ["xpath=//button[@onclick='sum()']", "xpath:attributes"],
+        ["xpath=//button[@onclick='calculate()']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'sum')]", "xpath:innerText"]
+        ["xpath=//button[contains(.,'calculate')]", "xpath:innerText"]
       ],
       "value": ""
     }]
@@ -375,9 +375,9 @@
       "target": "css=button:nth-child(1)",
       "targets": [
         ["css=button:nth-child(1)", "css:finder"],
-        ["xpath=//button[@onclick='sum()']", "xpath:attributes"],
+        ["xpath=//button[@onclick='calculate()']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'sum')]", "xpath:innerText"]
+        ["xpath=//button[contains(.,'calculate')]", "xpath:innerText"]
       ],
       "value": ""
     }]
@@ -453,9 +453,9 @@
       "target": "css=button:nth-child(1)",
       "targets": [
         ["css=button:nth-child(1)", "css:finder"],
-        ["xpath=//button[@onclick='sum()']", "xpath:attributes"],
+        ["xpath=//button[@onclick='calculate()']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'sum')]", "xpath:innerText"]
+        ["xpath=//button[contains(.,'calculate')]", "xpath:innerText"]
       ],
       "value": ""
     }]
@@ -531,9 +531,9 @@
       "target": "css=button:nth-child(1)",
       "targets": [
         ["css=button:nth-child(1)", "css:finder"],
-        ["xpath=//button[@onclick='sum()']", "xpath:attributes"],
+        ["xpath=//button[@onclick='calculate()']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'sum')]", "xpath:innerText"]
+        ["xpath=//button[contains(.,'calculate')]", "xpath:innerText"]
       ],
       "value": ""
     }]
@@ -609,9 +609,9 @@
       "target": "css=button:nth-child(1)",
       "targets": [
         ["css=button:nth-child(1)", "css:finder"],
-        ["xpath=//button[@onclick='sum()']", "xpath:attributes"],
+        ["xpath=//button[@onclick='calculate()']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'sum')]", "xpath:innerText"]
+        ["xpath=//button[contains(.,'calculate')]", "xpath:innerText"]
       ],
       "value": ""
     }]
