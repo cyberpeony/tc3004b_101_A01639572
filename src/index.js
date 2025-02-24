@@ -1,26 +1,24 @@
-function sum() {
+function calculate(operator) {
     const num1 = document.getElementById("num1").value;
     const num2 = document.getElementById("num2").value;
+    const operatorDisp = document.getElementById("operator");
+    const resultDisp = document.getElementById("result");
 
     let result;
-    result = Number(num1) + Number(num2);
+    if (operator == "+"){
+        result = Number(num1) + Number(num2);
+    }else if (operator == "-"){
+        result = Number(num1) - Number(num2);
+    }
 
-    document.getElementById("result").innerText = "Result: " + result;
-}
+    operatorDisp.innerText = operator;
 
-function substract() {
-    const num1 = document.getElementById("num1").value;
-    const num2 = document.getElementById("num2").value;
-
-    let result;
-    result = Number(num1) - Number(num2);
-
-    document.getElementById("result").innerText = "Result: " - result;
+    resultDisp.innerText = "Result: " + result;
 }
 
 function resetFields(){
     document.getElementById("num1").value ="";
     document.getElementById("num2").value ="";
-    document.getElementById("operator").value ="";
+    document.getElementById("operator").innerText ="";
     document.getElementById("result").innerText ="Result: ";
 }
