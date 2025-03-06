@@ -3,7 +3,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 const assert = require('assert');
 const fs = require('fs');
 
-describe('0.3+0.2', function () {
+describe('4-(-3.2)', function () {
     this.timeout(30000);
     let driver;
     let vars;
@@ -32,19 +32,19 @@ describe('0.3+0.2', function () {
         }
     });
 
-    it('0.3+0.2', async function () {
+    it('4-(-3.2)', async function () {
         await driver.get("http://127.0.0.1:8000/index.html")
         await driver.manage().window().setRect({ width: 720, height: 900 });
 
         await driver.findElement(By.id("num1")).click();
-        await driver.findElement(By.id("num1")).sendKeys("0.3");
+        await driver.findElement(By.id("num1")).sendKeys("4");
 
         await driver.findElement(By.id("num2")).click();
-        await driver.findElement(By.id("num2")).sendKeys("0.2");
+        await driver.findElement(By.id("num2")).sendKeys("-3.2");
 
-        await driver.findElement(By.xpath("//button[text()='Addition']")).click();
+        await driver.findElement(By.xpath("//button[text()='Substraction']")).click();
 
-        const filename = 'test2';
+        const filename = 'test6';
         const encodedString = await driver.takeScreenshot();
         await fs.writeFileSync(`./screenshots/${filename}.png`, encodedString, 'base64');
     });
