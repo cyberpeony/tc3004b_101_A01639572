@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "79e24839-0c70-4565-9268-55b83eaa8f87",
+		"name": "Calculator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34192901"
+	},
+	"item": [
+		{
+			"name": "add",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Result is the sum of num1 and num2\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var sum = parseFloat(pm.request.url.query.get('num1')) + parseFloat(pm.request.url.query.get('num2'));",
+							"    pm.expect(jsonData.result).to.be.closeTo(sum, 0.01);",
+							"});",
+							"",
+							"pm.test(\"Response has a 'result' field\", function () {",
+							"    pm.expect(pm.response.json()).to.have.property('result');",
+							"});",
+							"",
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Result is a number\", function () {",
+							"  const responseData = pm.response.json();",
+							"  pm.expect(responseData.result).to.be.a('number');",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 400ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(400);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/add?num1=-4&num2=16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"add"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "-4"
+						},
+						{
+							"key": "num2",
+							"value": "16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sub",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Result is the sum of num1 and num2\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var sum = parseFloat(pm.request.url.query.get('num1')) - parseFloat(pm.request.url.query.get('num2'));",
+							"    pm.expect(jsonData.result).to.be.closeTo(sum, 0.01);",
+							"});",
+							"",
+							"pm.test(\"Response has a 'result' field\", function () {",
+							"    pm.expect(pm.response.json()).to.have.property('result');",
+							"});",
+							"",
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Result is a number\", function () {",
+							"  const responseData = pm.response.json();",
+							"  pm.expect(responseData.result).to.be.a('number');",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 400ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(400);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sub?num1=-1&num2=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sub"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "-1"
+						},
+						{
+							"key": "num2",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
