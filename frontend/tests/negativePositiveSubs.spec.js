@@ -45,20 +45,8 @@ describe('4-(-3.2)', function () {
         await driver.findElement(By.xpath("//button[text()='Substraction']")).click();
         
         const result = await driver.findElement(By.id("result"));
-
-        await driver.wait(async function () {
-            const text = await result.getText();
-            console.log("Esperando texto...:", text);
-            return text.includes("7.2");
-        }, 7000); 
-    
         const resultText = await result.getText();
-        console.log("Texto final:", resultText);
-    
-        const match = resultText.match(/-?\d+(\.\d+)?/);
-        assert.ok(match, "No se encontró ningún num. en el resultado.");
-        const num = parseFloat(match[0]);
-        assert.ok(Math.abs(num - 7.2) < 0.001);    
+        assert.ok(resultText.includes("7.2"));
 
         const filename = 'test6';
         const encodedString = await driver.takeScreenshot();
