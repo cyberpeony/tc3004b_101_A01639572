@@ -43,7 +43,9 @@ describe('4-(-3.2)', function () {
         await driver.findElement(By.id("num2")).sendKeys("-3.2");
 
         await driver.findElement(By.xpath("//button[text()='Substraction']")).click();
-
+        
+        const result = await driver.findElement(By.id("result"));
+        assert(result).equal("7.2");
         const filename = 'test6';
         const encodedString = await driver.takeScreenshot();
         await fs.writeFileSync(`./screenshots/${filename}.png`, encodedString, 'base64');
