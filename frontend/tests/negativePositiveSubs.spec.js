@@ -46,17 +46,19 @@ describe('4-(-3.2)', function () {
         
         const result = await driver.findElement(By.id("result"));
 
-        await driver.wait(until.elementTextMatches(result, /-?\d+(\.\d+)?/), 5000);
-
+        await driver.wait(async function () {
+            const text = await result.getText();
+            console.log("Esperando texto...:", text);
+            return text.includes("7.2");
+        }, 7000); 
+    
         const resultText = await result.getText();
-        console.log("Raw result text:", JSON.stringify(resultText));
-
+        console.log("Texto final:", resultText);
+    
         const match = resultText.match(/-?\d+(\.\d+)?/);
         assert.ok(match, "No se encontró ningún num. en el resultado.");
         const num = parseFloat(match[0]);
-        console.log("Num extraído:", num);
-
-        assert.ok(Math.abs(num - 7.2) < 0.001);
+        assert.ok(Math.abs(num - 7.2) < 0.001);    
 
         const filename = 'test6';
         const encodedString = await driver.takeScreenshot();
