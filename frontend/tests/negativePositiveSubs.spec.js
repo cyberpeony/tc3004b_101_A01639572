@@ -46,7 +46,8 @@ describe('4-(-3.2)', function () {
         
         const result = await driver.findElement(By.id("result"));
         const resultText = await result.getText();
-        assert.ok(resultText.includes("7.2"));
+        const num = parseFloat(resultText.replace(/[^\d.-]/g, ''));
+        assert.ok(Math.abs(num - 7.2) < 0.001);
         const filename = 'test6';
         const encodedString = await driver.takeScreenshot();
         await fs.writeFileSync(`./screenshots/${filename}.png`, encodedString, 'base64');
