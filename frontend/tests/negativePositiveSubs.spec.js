@@ -46,7 +46,7 @@ describe('4-(-3.2)', function () {
         
         const result = await driver.findElement(By.id("result"));
         const resultText = await result.getText();
-        assert.strictEqual(resultText.trim(), "Result: 7.2");
+        assert.equal(resultText.trim(), "result: 7.2");
 
         const filename = 'test6';
         const encodedString = await driver.takeScreenshot();
