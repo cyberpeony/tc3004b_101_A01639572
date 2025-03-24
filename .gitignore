@@ -1,3 +1,4 @@
 backend/tests/node_modules/
 backend/add-sub-api
 .vscode/
+frontend/tests/node_modules/
