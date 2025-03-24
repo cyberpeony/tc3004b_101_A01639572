@@ -1,16 +1,22 @@
-function calculate(operator) {
+async function calculate(operator) {
     const num1 = document.getElementById("num1").value;
     const num2 = document.getElementById("num2").value;
+
     const operatorDisp = document.getElementById("operator");
     const resultDisp = document.getElementById("result");
-    let result;
+
     if (operator == "+"){
-        result = Number(num1) + Number(num2);
+        const response = await fetch(`http://localhost:8080/add?num1=${num1}&num2=${num2}`);
+        const result = await response.json();
+        operatorDisp.innerText = operator;
+        resultDisp.innerText = "Result: " + result.result;
+
     }else if (operator == "-"){
-        result = Number(num1) - Number(num2);
-    }
-    operatorDisp.innerText = operator;
-    resultDisp.innerText = "Result: " + result;
+        const response = await fetch(`http://localhost:8080/sub?num1=${num1}&num2=${num2}`);
+        const result = await response.json();
+        operatorDisp.innerText = operator;
+        resultDisp.innerText = "Result: " + result.result;
+    }   
 }
 
 function resetFields(){
