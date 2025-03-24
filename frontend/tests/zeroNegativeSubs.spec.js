@@ -33,7 +33,7 @@ describe('-4.67-0', function () {
     });
 
     it('-4.67-0', async function () {
-        await driver.get("http://127.0.0.1:8000/index.html")
+        await driver.get("http://localhost:8000")
         await driver.manage().window().setRect({ width: 720, height: 900 });
 
         await driver.findElement(By.id("num1")).click();
