@@ -41,6 +41,8 @@ jobs:
             cd tests
             npm install
             ./node_modules/.bin/mocha *.js
+            cd ..
+            cd ..
             cd backend/calculator
                     ./mvnw clean spring-boot:run & 
                     echo "waiting 5 seconds for the server to start"
