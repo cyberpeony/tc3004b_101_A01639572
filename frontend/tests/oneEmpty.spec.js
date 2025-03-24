@@ -48,7 +48,7 @@ describe(' + 5', function () {
         
         let resultText = await driver.findElement(By.id("result")).getText();
         
-        let resultValue = parseInt(resultText.replace('Result:', '').trim());
+        let resultValue = parseFloat(resultText.replace('Result:', '').trim());
         
         assert.strictEqual(resultValue, 5, "Result is not 5");
 
