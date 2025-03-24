@@ -3,19 +3,18 @@ async function calculate(operator) {
     const num2 = document.getElementById("num2").value;
 
     const operatorDisp = document.getElementById("operator");
-    const resultDisp = document.getElementById("result");
 
     if (operator == "+"){
         const response = await fetch(`http://localhost:8080/add?num1=${num1}&num2=${num2}`);
         const result = await response.json();
         operatorDisp.innerText = operator;
-        resultDisp.innerText = "Result: " + result.result;
+        document.getElementById("result").innerText = "Result: " + result.result;
 
     }else if (operator == "-"){
         const response = await fetch(`http://localhost:8080/sub?num1=${num1}&num2=${num2}`);
         const result = await response.json();
         operatorDisp.innerText = operator;
-        resultDisp.innerText = "Result: " + result.result;
+        document.getElementById("result").innerText = "Result: " + result.result;
     }   
 }
 
