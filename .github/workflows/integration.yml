@@ -32,17 +32,6 @@ jobs:
           chrome-version: 120
           install-dependencies: true
       - run: |
-            cd frontend
-            cd src
-            python3 -m http.server 8000 &
-            sleep 10 &&
-            curl http://localhost:8000
-            cd ..
-            cd tests
-            npm install
-            ./node_modules/.bin/mocha *.js
-            cd ..
-            cd ..
             cd backend/calculator
                     ./mvnw clean spring-boot:run & 
                     echo "waiting 5 seconds for the server to start"
@@ -62,7 +51,18 @@ jobs:
                     echo "sever ready for testing"
                     npm install -g newman
                     newman -v
-                    newman run src/test/integration/Calculator.postman_collection.json          
+                    newman run src/test/integration/Calculator.postman_collection.json     
+            cd ..
+            cd ..   
+            cd frontend
+            cd src
+            python3 -m http.server 8000 &
+            sleep 10 &&
+            curl http://localhost:8000
+            cd ..
+            cd tests
+            npm install
+            ./node_modules/.bin/mocha *.js  
       - uses: actions/upload-artifact@v4
         if: always()
         with:
