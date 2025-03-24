@@ -44,6 +44,14 @@ describe('1+1', function () {
 
         await driver.findElement(By.xpath("//button[text()='Addition']")).click();
 
+        await driver.wait(until.elementLocated(By.id("result")), 5000);
+                
+        let resultText = await driver.findElement(By.id("result")).getText();
+                
+        let resultValue = parseFloat(resultText.replace('Result:', '').trim());
+                
+        assert.strictEqual(resultValue, 2, "Result is not 2");
+
         const filename = 'test11';
         const encodedString = await driver.takeScreenshot();
         await fs.writeFileSync(`./screenshots/${filename}.png`, encodedString, 'base64');
